@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="hoja1.css">
+    <title>Ejercicio 2 Canvas</title>
+
+    <script>
+        function dibujarlinea() {
+            var canvasvar1 = document.getElementById("canvas1");
+            var contexto1 = canvasvar1.getContext("2d");
+            contexto1.moveTo(0, 0);
+            contexto1.lineTo(300, 200);/*Eje x eje y*/
+
+            contexto1.lineTo(600, 0);/*Eje x eje y*/
+            contexto1.stroke();
+        }
+
+        function escribirtexto() {
+            var canvasvar1 = document.getElementById("canvas1");
+            var contexto1 = canvasvar1.getContext("2d");
+            contexto1.font = "30px Arial";
+            contexto1.fillText("Hola a la clase de DIW", 150, 100);/*x, y*/
+        }
+
+        function dibujarcirculo() {
+            var canvasvar1 = document.getElementById("canvas1");
+            var contexto1 = canvasvar1.getContext("2d");
+            contexto1.beginPath();
+            contexto1.arc(300, 100, 40, 0, 2 * Math.PI);/*Eje x, eje y, radio, inicio de la circunferencia (0) y final de la circunferencia(2*PI) (2*Math.PI*R es la longitud completa de la circunferencia*/
+            contexto1.stroke();
+        }
+
+        function dibujarimagen() {
+            var canvasvar1 = document.getElementById("canvas1"); 
+            var contexto1 = canvasvar1.getContext("2d"); 
+            var imagen1 = document.getElementById("imagenid"); 
+            contexto1.drawImage(imagen1, 5, 5); /*eje x, eje y*/
+        }
+    </script>
+
+</head>
+
+<body>
+    Canvas <br>
+    <canvas id="canvas1" class="clasecanvas1" width="600px" height="400px">
+        <!---->
+
+    </canvas>
+
+    <p><button onclick="dibujarlinea()">Dibujar linea</button></p>
+    <p><button onclick="escribirtexto()">Escribir texto</button></p>
+    <p><button onclick="dibujarcirculo()">Dibujar circulo</button></p>
+    <p><button onclick="dibujarimagen()">Dibujar imagen</button></p>
+    <img id="imagenid" src="imagenes/imagen1.jpg" alt="imagen1" title="imagen del espacio" class="claseimagen">
+
+</body>
+
+</html>

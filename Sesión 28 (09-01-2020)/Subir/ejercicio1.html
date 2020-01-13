@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,38 @@
     <link rel="stylesheet" href="hoja1.css">
     <title>Ejercicio 1 de la sesion 28</title>
 </head>
+
 <body>
+    <h1>figure y figcaption</h1>
+    <figure>
+        <img src="imagenes/imagen1.jpg" alt="imagen CB" class="imagen1" title="imagen grande">
+        <figcaption>Imagen del juego Conquerors Blade</figcaption>
+    </figure>
+
+    <h2>picture</h2>
+    <picture>
+        <source media="(min-width: 650px)" srcset="imagenes/imagen1.jpg" class="imagen1">
+        <source media="(min-width: 450px)" srcset="imagenes/imagen2.jpg" class="imagen1">
+        <img src="imagenes/imagen3.jpg" alt="Imagen retrocompatible" style="width: auto;" class="imagen1">
+        <!--Si no se cumple ninguna de las anteriores condiciones, aplica está-->
+    </picture>
+
+    <h2></h2>
+    <audio id="audio1" controls>
+        <source src="musica/ibai.mp3" type="audio/mpeg">
+        <source src="musica/ibai.ogg" type="audio/ogg">
+        <source src="musica/ibai.wav" type="audio/wav"> Tu navegador no soporta esta etiqueta HTML5
+    </audio>
+<h2>Api de audio en html5 con java script</h2>
+    <div>
+        <button onclick="document.getElementById('audio1').play()">Reproducir el Audio</button> 
+        <button onclick="document.getElementById('audio1').pause()">Pausar el Audio</button>
+        <button onclick="document.getElementById('audio1').volume+=0.1">Aumentar el Volumen</button> 
+        <button onclick="document.getElementById('audio1').volume-=0.1">Disminuir el Volumen</button> 
+    </div>
+
+
     
 </body>
+
 </html>
