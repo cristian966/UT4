@@ -1,0 +1,89 @@
+.contenedorgridaligncontent, .contenedorgridjustifycontentendspacebetween, .contenedorgridjustifycontentendspaceevenly, .contenedorgridjustifycontentendspacearound, .contenedorgridjustifycontentendcenter, .contenedorgridjustifycontentend, .contenedorgridtemprows, .contenedorgridtemplatescolums, .contenedorgridlinea, .contenedorgrid {
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+  /*Espacio entre columnas y filas*/
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.contenedorgridaligncontent__elementohijo, .contenedorgridjustifycontentendspacebetween__elementohijo, .contenedorgridjustifycontentendspaceevenly__elementohijo, .contenedorgridjustifycontentendspacearound__elementohijo, .contenedorgridjustifycontentendcenter__elementohijo, .contenedorgridjustifycontentend__elementohijo, .contenedorgridtemprows__elementohijo, .contenedorgridtemplatescolums__elementohijo, .contenedorgridlinea__elementohijo, .contenedorgrid__elementohijo9, .contenedorgrid__elementohijo2, .contenedorgrid__elementohijo {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.contenedorgrid {
+  display: grid;
+  /*Se muestra por bloque*/
+}
+.contenedorgrid__elementohijo2 {
+  /*Donde empieza y donde acaba con row*/
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.contenedorgrid__elementohijo9 {
+  /*Donde empieza y donde acaba*/
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.contenedorgridlinea {
+  display: inline-grid;
+  /*Se muestra por linea*/
+}
+.contenedorgridtemplatescolums {
+  display: grid;
+  /*Se muestra por linea*/
+  grid-template-columns: repeat(5, 20%);
+  box-sizing: border-box;
+  gap: 0;
+}
+.contenedorgridtemprows {
+  display: grid;
+  /*Se muestra por linea*/
+  box-sizing: border-box;
+  gap: 0;
+  /*Propiedad resumen de colum-gap y row-gap*/
+  grid-template-rows: 200px 300px 200px;
+}
+.contenedorgridjustifycontentend {
+  display: grid;
+  /*Se muestra por linea*/
+  justify-content: end;
+}
+.contenedorgridjustifycontentendcenter {
+  display: grid;
+  /*Se muestra por linea*/
+  justify-content: center;
+}
+.contenedorgridjustifycontentendspacearound {
+  display: grid;
+  /*Se muestra por linea*/
+  justify-content: space-around;
+}
+.contenedorgridjustifycontentendspaceevenly {
+  display: grid;
+  /*Se muestra por linea*/
+  justify-content: space-evenly;
+}
+.contenedorgridjustifycontentendspacebetween {
+  display: grid;
+  /*Se muestra por linea*/
+  justify-content: space-between;
+}
+/*Align Content, centrado perfecto*/
+.contenedorgridaligncontent {
+  display: grid;
+  /*Se muestra por linea*/
+  justify-content: center;
+  align-content: center;
+  min-height: 600px;
+  margin-top: 30px;
+}
+
+/*# sourceMappingURL=hoja1.css.map */

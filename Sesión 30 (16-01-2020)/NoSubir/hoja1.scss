@@ -1,0 +1,134 @@
+%contenedor{
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+    /*Espacio entre columnas y filas*/
+    column-gap:10px;
+    row-gap:15px;
+}
+%hijo{
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(0,0,0,0.8);
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.contenedorgrid{
+    display: grid; /*Se muestra por bloque*/
+    @extend %contenedor;
+   
+    &__elementohijo{
+       @extend %hijo;
+    }
+    &__elementohijo2{/*Donde empieza y donde acaba con row*/
+        @extend %hijo;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    &__elementohijo9{/*Donde empieza y donde acaba*/
+        @extend %hijo;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+}
+
+.contenedorgridlinea{
+    display: inline-grid; /*Se muestra por linea*/
+
+    @extend %contenedor;
+    &__elementohijo{
+     @extend %hijo;
+    }
+}
+
+.contenedorgridtemplatescolums{
+    display: grid; /*Se muestra por linea*/
+    @extend %contenedor;
+    grid-template-columns: repeat(5, 20%);
+    box-sizing: border-box;
+    gap: 0;
+    &__elementohijo{
+     @extend %hijo;
+    }
+}
+
+
+.contenedorgridtemprows{
+    display: grid; /*Se muestra por linea*/
+    @extend %contenedor;
+    //grid-template-columns: repeat(5, 20%);
+    box-sizing: border-box;
+    gap: 0;/*Propiedad resumen de colum-gap y row-gap*/
+
+    grid-template-rows: 200px 300px 200px;
+    &__elementohijo{
+     @extend %hijo;
+    }
+}
+
+@mixin justifycontent($valor){
+    justify-content: $valor;
+}
+
+.contenedorgridjustifycontentend{
+    display: grid; /*Se muestra por linea*/
+    @extend %contenedor;
+   @include justifycontent(end);
+    &__elementohijo{
+     @extend %hijo;
+    }
+}
+.contenedorgridjustifycontentendcenter{
+    display: grid; /*Se muestra por linea*/
+    @extend %contenedor;
+   @include justifycontent(center);
+    &__elementohijo{
+     @extend %hijo;
+    }
+}
+.contenedorgridjustifycontentendspacearound{
+    display: grid; /*Se muestra por linea*/
+    @extend %contenedor;
+   @include justifycontent(space-around);
+    &__elementohijo{
+     @extend %hijo;
+    }
+}
+.contenedorgridjustifycontentendspaceevenly{
+    display: grid; /*Se muestra por linea*/
+    @extend %contenedor;
+   @include justifycontent(space-evenly);
+    &__elementohijo{
+     @extend %hijo;
+    }
+}
+.contenedorgridjustifycontentendspacebetween{
+    display: grid; /*Se muestra por linea*/
+    @extend %contenedor;
+   @include justifycontent(space-between);
+    &__elementohijo{
+     @extend %hijo;
+    }
+}
+
+/*Align Content, centrado perfecto*/
+
+@mixin aligncontent($valor) {
+    align-content: $valor;
+}
+
+.contenedorgridaligncontent{
+    display: grid; /*Se muestra por linea*/
+    @extend %contenedor;
+   @include justifycontent(center);
+   @include aligncontent(center);
+   min-height: 600px;
+   margin-top: 30px;
+    &__elementohijo{
+     @extend %hijo;
+    }
+}
+
